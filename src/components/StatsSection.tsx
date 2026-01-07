@@ -33,7 +33,7 @@ const AnimatedCounter = ({ value, suffix, isVisible }: { value: number; suffix: 
   }, [isVisible, value]);
 
   return (
-    <span className="text-4xl md:text-5xl font-bold text-primary-foreground">
+    <span className="text-4xl md:text-5xl font-semibold text-white">
       {count.toLocaleString()}{suffix}
     </span>
   );
@@ -70,9 +70,9 @@ const StatsSection = () => {
               className={`text-center ${isVisible ? "animate-count" : "opacity-0"}`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <stat.icon className="w-12 h-12 text-primary-foreground/80 mx-auto mb-4" />
+              <stat.icon className="w-12 h-12 text-white/80 mx-auto mb-4" />
               <AnimatedCounter value={stat.value} suffix={stat.suffix} isVisible={isVisible} />
-              <p className="text-primary-foreground/80 mt-2 font-medium">{stat.label}</p>
+              <p className="text-white/80 mt-2 font-normal">{stat.label}</p>
             </div>
           ))}
         </div>

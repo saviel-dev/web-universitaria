@@ -36,9 +36,9 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
     }`}>
       <div className="container flex justify-between items-center py-4">
         <a href="#inicio" className="flex items-center gap-3">
-          <img src={logoIuttol} alt="IUTTOL Logo" className="h-12 w-auto object-contain" />
+          <img src={logoIuttol} alt="IUTTOL Logo" className="h-12 w-auto object-contain bg-white p-1 rounded" />
           <div className="hidden md:block">
-            <span className="font-semibold text-foreground text-lg">IUTTOL</span>
+            <span className="font-medium text-foreground text-lg">IUTTOL</span>
             <p className="text-xs text-muted-foreground">Instituto Universitario de Tecnología</p>
           </div>
         </a>

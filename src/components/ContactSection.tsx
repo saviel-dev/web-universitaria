@@ -53,7 +53,7 @@ const ContactSection = () => {
     <section id="contacto" ref={sectionRef} className="py-20 bg-background">
       <div className="container">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
             Contáctanos
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6" />
@@ -65,7 +65,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className={`${isVisible ? "animate-slide-left" : "opacity-0"}`}>
-            <h3 className="text-2xl font-bold text-foreground mb-6">Información de Contacto</h3>
+            <h3 className="text-2xl font-medium text-foreground mb-6">Información de Contacto</h3>
             <div className="space-y-6">
               {contactInfo.map((item, index) => (
                 <div key={index} className="flex items-start gap-4">

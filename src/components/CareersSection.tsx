@@ -58,7 +58,7 @@ const CareersSection = () => {
     <section id="carreras" ref={sectionRef} className="py-20 bg-background">
       <div className="container">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
             Nuestras Carreras
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6" />
@@ -80,7 +80,7 @@ const CareersSection = () => {
               <div className={`${career.color} p-4 rounded inline-block mb-4`}>
                 <career.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">{career.title}</h3>
+              <h3 className="text-xl font-medium text-foreground mb-3">{career.title}</h3>
               <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                 {career.description}
               </p>
@@ -88,7 +88,7 @@ const CareersSection = () => {
                 <span className="text-sm text-primary font-medium">
                   Duración: {career.duration}
                 </span>
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                <Button variant="default" size="sm" className="bg-primary text-white hover:bg-primary/90 hover:text-white">
                   Ver más →
                 </Button>
               </div>

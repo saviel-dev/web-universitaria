@@ -31,8 +31,8 @@ const Footer = () => {
           {/* Logo & Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <img src={logoIuttol} alt="IUTTOL" className="h-12 w-auto bg-background rounded p-1" />
-              <span className="font-bold text-xl">IUTTOL</span>
+              <img src={logoIuttol} alt="IUTTOL" className="h-12 w-auto bg-white rounded p-1" />
+              <span className="font-medium text-xl">IUTTOL</span>
             </div>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
               Instituto Universitario de Tecnología "Tomás Lander". Formando profesionales 
@@ -56,7 +56,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Enlaces Rápidos</h4>
+            <h4 className="font-medium text-lg mb-6">Enlaces Rápidos</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -73,7 +73,7 @@ const Footer = () => {
 
           {/* Careers */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Carreras</h4>
+            <h4 className="font-medium text-lg mb-6">Carreras</h4>
             <ul className="space-y-3">
               {careers.map((career, index) => (
                 <li key={index}>
@@ -90,7 +90,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Contacto</h4>
+            <h4 className="font-medium text-lg mb-6">Contacto</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
