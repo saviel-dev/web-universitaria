@@ -54,19 +54,18 @@ const HeroCarousel = () => {
             alt={slide.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/70" />
+          <div className="absolute inset-0 bg-[#003087]/70" />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="container text-center text-primary-foreground">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-up">
+            <div className="container text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold mb-4 animate-fade-up text-white">
                 {slide.title}
               </h1>
-              <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-up delay-200">
+              <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-up delay-200 text-white">
                 {slide.subtitle}
               </p>
               <Button
                 size="lg"
-                variant="secondary"
-                className="animate-fade-up delay-300 font-semibold px-8"
+                className="animate-fade-up delay-300 font-medium px-8 bg-white text-[#003087] hover:bg-gray-100 hover:text-[#003087]"
               >
                 {slide.cta}
               </Button>
@@ -79,7 +78,7 @@ const HeroCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-primary-foreground hover:bg-primary-foreground/20 h-12 w-12"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12"
         onClick={prevSlide}
       >
         <ChevronLeft className="h-8 w-8" />
@@ -87,7 +86,7 @@ const HeroCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-primary-foreground hover:bg-primary-foreground/20 h-12 w-12"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12"
         onClick={nextSlide}
       >
         <ChevronRight className="h-8 w-8" />
@@ -101,8 +100,8 @@ const HeroCarousel = () => {
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all ${
               index === currentSlide
-                ? "bg-primary-foreground w-8"
-                : "bg-primary-foreground/50 hover:bg-primary-foreground/70"
+                ? "bg-white w-8"
+                : "bg-white/50 hover:bg-white/70"
             }`}
           />
         ))}

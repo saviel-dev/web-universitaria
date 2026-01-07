@@ -31,7 +31,7 @@ const AboutSection = () => {
     <section id="sobre" ref={sectionRef} className="py-20 bg-secondary">
       <div className="container">
         <div className={`text-center mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
             Sobre Nosotros
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto" />
@@ -44,7 +44,7 @@ const AboutSection = () => {
               <div className="p-3 bg-primary/10 rounded">
                 <Target className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Misión</h3>
+              <h3 className="text-2xl font-medium text-foreground">Misión</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Formar profesionales integrales y líderes tecnológicos con excelencia académica, 
@@ -59,7 +59,7 @@ const AboutSection = () => {
               <div className="p-3 bg-primary/10 rounded">
                 <Eye className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Visión</h3>
+              <h3 className="text-2xl font-medium text-foreground">Visión</h3>
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Ser reconocidos como una institución de educación superior de referencia nacional 
@@ -75,7 +75,7 @@ const AboutSection = () => {
           {values.map((value, index) => (
             <div key={index} className="text-center p-6 bg-card border border-border">
               <value.icon className="w-10 h-10 text-primary mx-auto mb-3" />
-              <h4 className="font-semibold text-foreground mb-1">{value.title}</h4>
+              <h4 className="font-medium text-foreground mb-1">{value.title}</h4>
               <p className="text-sm text-muted-foreground">{value.desc}</p>
             </div>
           ))}
