@@ -1,7 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "iuttol-landing-pro",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Landing page y plataforma para la Universidad Tecnológica de los Valles del Tuy (IUTTOL)",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -46,6 +47,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
+    "ionicons": "^8.0.13",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",

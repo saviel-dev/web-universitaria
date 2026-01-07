@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoIuttol from "@/assets/logo-iuttol.jpg";
+import logoIuttol from "@/assets/logo.png";
 
 interface NavbarProps {
   isDark: boolean;
@@ -11,6 +12,28 @@ interface NavbarProps {
 const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (isHome) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,13 +52,17 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
   ];
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "bg-background/95 backdrop-blur-sm shadow-md" 
-        : "bg-background"
-    }`}>
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+      ? "bg-background/95 backdrop-blur-sm shadow-md"
+      : "bg-background"
+      }`}>
       <div className="container flex justify-between items-center py-4">
-        <a href="#inicio" className="flex items-center gap-3">
+
+        <a
+          href="#inicio"
+          onClick={(e) => handleNavigation(e, "#inicio")}
+          className="flex items-center gap-3"
+        >
           <img src={logoIuttol} alt="IUTTOL Logo" className="h-12 w-auto object-contain bg-white p-1 rounded" />
           <div className="hidden md:block">
             <span className="font-medium text-foreground text-lg">IUTTOL</span>
@@ -49,6 +76,7 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
             <a
               key={link.name}
               href={link.href}
+              onClick={(e) => handleNavigation(e, link.href)}
               className="text-foreground hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all hover:after:w-full"
             >
               {link.name}
@@ -88,7 +116,7 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
                 key={link.name}
                 href={link.href}
                 className="text-foreground hover:text-primary font-medium py-2 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={(e) => handleNavigation(e, link.href)}
               >
                 {link.name}
               </a>

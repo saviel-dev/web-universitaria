@@ -45,9 +45,8 @@ const HeroCarousel = () => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+            }`}
         >
           <img
             src={slide.image}
@@ -63,12 +62,14 @@ const HeroCarousel = () => {
               <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-up delay-200 text-white">
                 {slide.subtitle}
               </p>
-              <Button
-                size="lg"
-                className="animate-fade-up delay-300 font-medium px-8 bg-white text-[#003087] hover:bg-gray-100 hover:text-[#003087]"
-              >
-                {slide.cta}
-              </Button>
+              <div className="animate-fade-up delay-300">
+                <Button
+                  size="lg"
+                  className="font-medium px-8 bg-white text-[#003087] hover:bg-gray-100 hover:text-[#003087] transform hover:scale-110 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]"
+                >
+                  {slide.cta}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -78,7 +79,7 @@ const HeroCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12 z-20"
         onClick={prevSlide}
       >
         <ChevronLeft className="h-8 w-8" />
@@ -86,23 +87,22 @@ const HeroCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12 z-20"
         onClick={nextSlide}
       >
         <ChevronRight className="h-8 w-8" />
       </Button>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide
-                ? "bg-white w-8"
-                : "bg-white/50 hover:bg-white/70"
-            }`}
+            className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
+              ? "bg-white w-8"
+              : "bg-white/50 hover:bg-white/70"
+              }`}
           />
         ))}
       </div>

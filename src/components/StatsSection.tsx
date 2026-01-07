@@ -13,12 +13,12 @@ const AnimatedCounter = ({ value, suffix, isVisible }: { value: number; suffix: 
 
   useEffect(() => {
     if (!isVisible) return;
-    
+
     const duration = 2000;
     const steps = 60;
     const increment = value / steps;
     let current = 0;
-    
+
     const timer = setInterval(() => {
       current += increment;
       if (current >= value) {
@@ -61,7 +61,7 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-primary">
+    <section ref={sectionRef} className="py-16 bg-[#0929b4]">
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

@@ -63,7 +63,7 @@ const CareersSection = () => {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Ofrecemos programas académicos de calidad diseñados para formar profesionales 
+            Ofrecemos programas académicos de calidad diseñados para formar profesionales
             competitivos y preparados para los retos del mercado laboral actual.
           </p>
         </div>
@@ -72,16 +72,15 @@ const CareersSection = () => {
           {careers.map((career, index) => (
             <div
               key={index}
-              className={`group bg-card border border-border p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
-                isVisible ? "animate-fade-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`group bg-card border border-border p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${isVisible ? "animate-zoom-in" : "opacity-0"
+                }`}
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className={`${career.color} p-4 rounded inline-block mb-4`}>
                 <career.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-medium text-foreground mb-3">{career.title}</h3>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed text-justify indent-6">
                 {career.description}
               </p>
               <div className="flex justify-between items-center pt-4 border-t border-border">

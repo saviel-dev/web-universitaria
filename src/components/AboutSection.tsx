@@ -46,9 +46,9 @@ const AboutSection = () => {
               </div>
               <h3 className="text-2xl font-medium text-foreground">Misión</h3>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
-              Formar profesionales integrales y líderes tecnológicos con excelencia académica, 
-              valores éticos y capacidad de innovación, preparados para contribuir al desarrollo 
+            <p className="text-muted-foreground leading-relaxed text-justify indent-6">
+              Formar profesionales integrales y líderes tecnológicos con excelencia académica,
+              valores éticos y capacidad de innovación, preparados para contribuir al desarrollo
               sostenible de la sociedad venezolana y responder a los desafíos del mundo globalizado.
             </p>
           </div>
@@ -61,10 +61,10 @@ const AboutSection = () => {
               </div>
               <h3 className="text-2xl font-medium text-foreground">Visión</h3>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
-              Ser reconocidos como una institución de educación superior de referencia nacional 
-              e internacional, destacada por la excelencia de sus programas académicos, la 
-              investigación aplicada y la formación de profesionales comprometidos con el 
+            <p className="text-muted-foreground leading-relaxed text-justify indent-6">
+              Ser reconocidos como una institución de educación superior de referencia nacional
+              e internacional, destacada por la excelencia de sus programas académicos, la
+              investigación aplicada y la formación de profesionales comprometidos con el
               progreso tecnológico y social.
             </p>
           </div>

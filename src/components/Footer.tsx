@@ -1,11 +1,22 @@
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import logoIuttol from "@/assets/logo-iuttol.jpg";
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import logoIuttol from "@/assets/logo.png";
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className={className}
+    fill="currentColor"
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
     { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: XIcon, href: "https://twitter.com", label: "X (Twitter)" },
     { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
   ];
 
@@ -35,7 +46,7 @@ const Footer = () => {
               <span className="font-medium text-xl">IUTTOL</span>
             </div>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
-              Instituto Universitario de Tecnología "Tomás Lander". Formando profesionales 
+              Instituto Universitario de Tecnología "Tomás Lander". Formando profesionales
               de excelencia desde 1974.
             </p>
             <div className="flex gap-4">
@@ -93,17 +104,17 @@ const Footer = () => {
             <h4 className="font-medium text-lg mb-6">Contacto</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                <MapPin className="w-5 h-5 text-white dark:text-primary mt-0.5 shrink-0" />
                 <span className="text-background/70 text-sm">
                   Ocumare del Tuy, Estado Miranda, Venezuela
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <Phone className="w-5 h-5 text-white dark:text-primary shrink-0" />
                 <span className="text-background/70 text-sm">+58 412-123-4567</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
+                <Mail className="w-5 h-5 text-white dark:text-primary shrink-0" />
                 <span className="text-background/70 text-sm">info@iuttol.edu.ve</span>
               </li>
             </ul>
@@ -118,10 +129,10 @@ const Footer = () => {
             © {new Date().getFullYear()} IUTTOL. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-background/60 hover:text-background transition-colors">
+            <a href="/privacy" className="text-background/60 hover:text-background transition-colors">
               Política de Privacidad
             </a>
-            <a href="#" className="text-background/60 hover:text-background transition-colors">
+            <a href="/terms" className="text-background/60 hover:text-background transition-colors">
               Términos de Uso
             </a>
           </div>

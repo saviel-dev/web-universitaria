@@ -123,9 +123,8 @@ const TestimonialsSection = () => {
             {getVisibleTestimonials().map((testimonial, index) => (
               <div
                 key={`${testimonial.originalIndex}-${currentIndex}`}
-                className={`bg-card p-8 border border-border relative transition-all duration-500 ${
-                  isVisible ? "animate-fade-up" : "opacity-0"
-                }`}
+                className={`bg-card p-8 border border-border relative transition-all duration-500 ${isVisible ? "animate-fade-up" : "opacity-0"
+                  }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
@@ -140,7 +139,9 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
                 <p className="text-muted-foreground leading-relaxed italic font-normal">
-                  "{testimonial.quote}"
+                  "{testimonial.quote.split(" ").length > 25
+                    ? testimonial.quote.split(" ").slice(0, 25).join(" ") + "..."
+                    : testimonial.quote}"
                 </p>
               </div>
             ))}
@@ -152,11 +153,10 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  index === currentIndex
+                className={`w-2.5 h-2.5 rounded-full transition-all ${index === currentIndex
                     ? "bg-primary w-6"
                     : "bg-primary/30 hover:bg-primary/50"
-                }`}
+                  }`}
               />
             ))}
           </div>
