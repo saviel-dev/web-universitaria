@@ -64,7 +64,7 @@ const Navbar = ({ isDark, toggleTheme }: NavbarProps) => {
           className="flex items-center gap-3"
         >
           <img src={logoIuttol} alt="IUTTOL Logo" className="h-12 w-auto object-contain bg-white p-1 rounded" />
-          <div className="hidden md:block">
+          <div>
             <span className="font-medium text-foreground text-lg">IUTTOL</span>
             <p className="text-xs text-muted-foreground">Instituto Universitario de Tecnología</p>
           </div>
